@@ -1,7 +1,7 @@
 {
-  "criteria": {
-    "requirement": {
-      "trigger": "minecraft:item_used_on_block",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:item_used_on_block",
 			"conditions": {
 				"player": {
 					"flags": {
@@ -9,29 +9,29 @@
 					}
 				},
 				"location": [
-          {
-            "condition": "minecraft:match_tool",
-            "predicate": {
-              "items": [
-                "minecraft:glow_item_frame"
-              ]
-            }
-          },
 					{
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "block": {
-                "blocks": [
-                  "minecraft:chest",
-                  "minecraft:trapped_chest"
-                ]
-              }
-            }
-          }
-        ]
+						"condition": "minecraft:match_tool",
+						"predicate": {
+							"items": [
+								"minecraft:glow_item_frame"
+							]
+						}
+					},
+					{
+						"condition": "minecraft:location_check",
+						"predicate": {
+							"block": {
+								"blocks": [
+									"minecraft:chest",
+									"minecraft:trapped_chest"
+								]
+							}
+						}
+					}
+				]
 			}
-    }
-  },
+		}
+	},
 	"rewards": {
 		"function": "linked_storage:actions/placed_frame"
 	}
