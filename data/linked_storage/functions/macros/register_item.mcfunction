@@ -8,15 +8,15 @@ $execute unless data storage ls:storage items.$(id) run data modify storage ls:s
 
 
 # ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
-# If there are no items already in the storage, add them from the chest, under the same entry id
-# ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
-$execute unless data storage ls:storage items.$(id)[0] run execute at @e[nbt={Item:{id:"$(id)"}}] run data modify storage ls:storage items.$(id) set from block ^ ^ ^-1 Items
-
-
-# ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
-# Otherwise, if there are items inside the storage, put them in the chest.
+# If there are items inside the storage, put them in the chest
 # ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 $execute if data storage ls:storage items.$(id)[0] run execute at @e[nbt={Item:{id:"$(id)"}}] run data modify block ^ ^ ^-1 Items set from storage ls:storage items.$(id)
+
+
+# ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+# Otherwise add them from the chest, under the same entry id
+# ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+$execute unless data storage ls:storage items.$(id)[0] run execute at @e[nbt={Item:{id:"$(id)"}}] run data modify storage ls:storage items.$(id) set from block ^ ^ ^-1 Items
 
 
 # ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
