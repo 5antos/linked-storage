@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "mainhand": {
+              "count": {
+                "min": 1
+              }
+            }
+          }
+        },
+        "entity": {
+          "type": "minecraft:glow_item_frame"
+        }
+      }
+    }
+  },
+	"rewards": {
+		"function": "linked_storage:actions/placed_item_on_frame"
+	}
+}

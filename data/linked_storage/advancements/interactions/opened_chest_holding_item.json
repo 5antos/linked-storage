@@ -1,0 +1,36 @@
+{
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:item_used_on_block",
+			"conditions": {
+				"location": [
+					{
+						"condition": "minecraft:location_check",
+						"predicate": {
+							"block": {
+								"blocks": [
+									"minecraft:chest"
+								]
+							}
+						}
+					}
+				],
+				"player": {
+					"flags": {
+						"is_sneaking": false
+					},
+					"equipment": {
+						"mainhand": {
+							"count": {
+								"min": 1
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"rewards": {
+		
+	}
+}
